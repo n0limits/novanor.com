@@ -1,0 +1,23 @@
+@Test
+function testForDeletionOfCorrectField(id) {
+  var tr = document.getElementById(id);
+  if (tr) {
+    if (tr.nodeName == 'TR') {
+      var tbl = tr; 
+      while (tbl != document && tbl.nodeName != 'TABLE') {
+        tbl = tbl.parentNode;
+      }
+
+      if (tbl && tbl.nodeName == 'TABLE') {
+        while (tr.hasChildNodes()) {
+          tr.removeChild( tr.lastChild );
+        }
+      tr.parentNode.removeChild( tr );
+      }
+    } else {
+      alert( 'Specified document element is not a TR. id=' + id );
+    }
+  } else {
+    alert( 'Specified document element is not found. id=' + id );
+  }
+}

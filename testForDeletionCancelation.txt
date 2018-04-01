@@ -1,0 +1,12 @@
+@Test
+function testForDeletionCancelation() {
+    var input;
+    input = prompt('are you sure??');
+    if (input === null) {
+        return; //break out of the function early
+    }
+    else {
+    input = delete;
+    }
+
+}
